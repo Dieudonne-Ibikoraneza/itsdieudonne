@@ -370,8 +370,8 @@ const projects: Project[] = [
       ],
       backend: [],
     },
-    live: "https://noteit-rose-vercel.app",
-    github: "",
+    live: "https://noteit-rose.vercel.app",
+    github: "https://www.github.com/Dieudonne-Ibikoraneza/noteit-rose",
     get content() {
       return (
         <div>
