@@ -1,6 +1,6 @@
 // thoda zada ts ho gya idhar
 export enum SkillNames {
-  AWS = "aws",
+  // AWS = "aws",
   // AZURE = "azure",    // +
   LINUX = "linux",    
   // SHELL = "shell",    // +
