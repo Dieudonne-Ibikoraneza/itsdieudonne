@@ -35,7 +35,7 @@ const config = {
   },
   social: {
     twitter: "https://x.com/Unknown_TNTL/",
-    linkedin: "https://www.linkedin.com/in/ibikoraneza-dieudonne-716b082b6/",
+    linkedin: "https://www.linkedin.com/in/ibikoraneza-dieudonne-891972277/",
     instagram: "https://www.instagram.com/d___i.o_x/",
     facebook: "https://www.facebook.com/popdiox",
     github: "https://github.com/Dieudonne-Ibikoraneza/",

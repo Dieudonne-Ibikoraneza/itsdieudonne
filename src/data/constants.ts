@@ -35,10 +35,11 @@ export enum SkillNames {
   GITHUB = "github",   //
   PRETTIER = "prettier",  //
   NPM = "npm",       //
-  FIREBASE = "firebase",  //
-  WORDPRESS = "wordpress",  //
-  NGINX = "nginx",      //
-  VIM = "vim",           //
+  ANGULAR = "angular",  //
+  JAVA = "java",  //
+  CPLUSPLUS = "cplusplus", //
+  REACTNATIVE = "reactnative", //
+  NESTJS = "nestjs", //
   VERCEL = "vercel",    //
 }
 export type Skill = {
@@ -182,22 +183,21 @@ using use = useUsing("use")`,
     color: "#fff",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg",
   },
-  [SkillNames.FIREBASE]: {
+  [SkillNames.ANGULAR]: {
     id: 17,
-    name: "firebase",
-    label: "Firebase",
-    shortDescription:
-      "your app's ultimate wingman, but watch out, vendor lock-in vibes! 🔥👌",
-    color: "#ffca28",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+    name: "angular",
+    label: "Angular",
+    shortDescription: "Google's heavy duty frontend framework! 🅰️🚀",
+    color: "#dd0031",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg",
   },
-  [SkillNames.WORDPRESS]: {
+  [SkillNames.JAVA]: {
     id: 18,
-    name: "wordpress",
-    label: "WordPress",
-    shortDescription: "the grandpa of CMS, still rocking that cane 🧓👴",
-    color: "#007acc",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg",
+    name: "java",
+    label: "Java",
+    shortDescription: "Write once, run everywhere! The OG enterprise language ☕🔥",
+    color: "#007396",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
   },
   [SkillNames.LINUX]: {
     id: 19,
@@ -215,30 +215,29 @@ using use = useUsing("use")`,
     color: "#2496ed",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
   },
-  [SkillNames.NGINX]: {
+  [SkillNames.NESTJS]: {
     id: 21,
-    name: "nginx",
-    label: "NginX",
-    shortDescription: "reverse proxy go zoom zoom, sheesh! 🚗💨",
-    color: "#008000",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg",
+    name: "nestjs",
+    label: "NestJS",
+    shortDescription: "Backend architecture so clean, it belongs in a museum! 🏛️✨",
+    color: "#e0234e",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg",
   },
-  [SkillNames.AWS]: {
+  [SkillNames.CPLUSPLUS]: {
     id: 22,
-    name: "aws",
-    label: "AWS",
-    shortDescription:
-      "always extra, making everything more complicated, period! 🌐👨‍💻",
-    color: "#ff9900",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg",
+    name: "cplusplus",
+    label: "C / C++",
+    shortDescription: "Managing memory yourself because you like to live dangerously! 🧠💥",
+    color: "#00599c",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
   },
-  [SkillNames.VIM]: {
+  [SkillNames.REACTNATIVE]: {
     id: 23,
-    name: "vim",
-    label: "Vim",
-    shortDescription: "exit? In this economy? Ight, imma head out! 🚪🏃",
-    color: "#e34c26",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vim/vim-original.svg",
+    name: "reactnative",
+    label: "React Native",
+    shortDescription: "write once, deploy everywhere—until Xcode breaks! 📱🥴",
+    color: "#61dafb",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
   },
   [SkillNames.VERCEL]: {
     id: 24,
