@@ -12,7 +12,6 @@ import React, {
 } from "react";
 import { gsap } from "gsap";
 import { cn } from "@/lib/utils";
-import { useMouse } from "@/hooks/use-mouse";
 import { usePreloader } from "../preloader";
 import { useMediaQuery } from "@/hooks/use-media-query";
 
@@ -74,10 +73,10 @@ function ElasticCursor() {
   const { loadingPercent, isLoading } = usePreloader();
   const isMobile = useMediaQuery("(max-width: 768px)");
 
-  // React Refs for Jelly Blob and Text
+  // React Refs for Jelly Blob, small dot and Text
   const jellyRef = useRef<HTMLDivElement>(null);
+  const dotRef = useRef<HTMLDivElement>(null);
   const [isHovering, setIsHovering] = useState(false);
-  const { x, y } = useMouse();
 
   // Save pos and velocity Objects
   const pos = useInstance(() => ({ x: 0, y: 0 }));
@@ -152,9 +151,13 @@ function ElasticCursor() {
         });
         setIsHovering(false);
       }
-      // Mouse X and Y
+      // Mouse X and Y — move dot instantly via direct DOM
       const x = e.clientX;
       const y = e.clientY;
+      if (dotRef.current) {
+        dotRef.current.style.left = x + "px";
+        dotRef.current.style.top = y + "px";
+      }
 
       // Animate Position and calculate Velocity with GSAP
       gsap.to(pos, {
@@ -205,10 +208,11 @@ function ElasticCursor() {
         }}
       ></div>
       <div
-        className="w-3 h-3 rounded-full fixed translate-x-[-50%] translate-y-[-50%] pointer-events-none transition-none duration-300"
+        ref={dotRef}
+        className="w-3 h-3 rounded-full fixed translate-x-[-50%] translate-y-[-50%] pointer-events-none"
         style={{
-          top: y,
-          left: x,
+          top: 0,
+          left: 0,
           backdropFilter: "invert(100%)",
         }}
       ></div>

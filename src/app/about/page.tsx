@@ -55,7 +55,7 @@ const CONTACT_LINKS = [
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/ibikoraneza-dieudonne-716b082b6/",
+    href: "https://www.linkedin.com/in/ibikoraneza-dieudonne-891972277/",
     content: "/zende-abhijit",
     icon: <FaLinkedin height={"50px"} />,
   },

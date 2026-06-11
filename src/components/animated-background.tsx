@@ -132,14 +132,30 @@ const AnimatedBackground = () => {
     return STATES[section][isMobile ? "mobile" : "desktop"];
   };
 
+  const safeSetVariable = (name: string, value: string) => {
+    const originalWarn = console.warn;
+    const originalError = console.error;
+    console.warn = () => {};
+    console.error = () => {};
+    try {
+      splineApp?.setVariable(name, value);
+    } catch (e) {
+      // Ignore missing variable warnings
+    } finally {
+      console.warn = originalWarn;
+      console.error = originalError;
+    }
+  };
+
+
   const handleMouseHover = (e: SplineEvent) => {
     if (!splineApp || selectedSkill?.name === e.target.name) return;
 
     if (e.target.name === "body" || e.target.name === "platform") {
       setSelectedSkill(null);
       if (splineApp.getVariable("heading") && splineApp.getVariable("desc")) {
-        splineApp.setVariable("heading", "");
-        splineApp.setVariable("desc", "");
+        safeSetVariable("heading", "");
+        safeSetVariable("desc", "");
       }
     } else {
       if (!selectedSkill || selectedSkill.name !== e.target.name) {
@@ -149,11 +165,10 @@ const AnimatedBackground = () => {
     }
   };
 
-  // handle keyboard press interaction
   useEffect(() => {
     if (!selectedSkill || !splineApp) return;
-    splineApp.setVariable("heading", selectedSkill.label);
-    splineApp.setVariable("desc", selectedSkill.shortDescription);
+    safeSetVariable("heading", selectedSkill.label);
+    safeSetVariable("desc", selectedSkill.shortDescription);
   }, [selectedSkill]);
 
   // handle keyboard heading and desc visibility
@@ -255,8 +270,8 @@ const AnimatedBackground = () => {
       }
       if (activeSection === "skills") {
       } else {
-        splineApp.setVariable("heading", "");
-        splineApp.setVariable("desc", "");
+        safeSetVariable("heading", "");
+        safeSetVariable("desc", "");
       }
       if (activeSection === "projects") {
         await sleep(300);
@@ -298,7 +313,6 @@ const AnimatedBackground = () => {
     await sleep(400);
     kbd.visible = true;
     setKeyboardRevealed(true);
-    console.log(activeSection);
     gsap.fromTo(
       kbd?.scale,
       { x: 0.01, y: 0.01, z: 0.01 },
@@ -342,19 +356,20 @@ const AnimatedBackground = () => {
       );
     });
   };
+
   const handleSplineInteractions = () => {
     if (!splineApp) return;
     splineApp.addEventListener("keyUp", (e) => {
       if (!splineApp) return;
-      splineApp.setVariable("heading", "");
-      splineApp.setVariable("desc", "");
+      safeSetVariable("heading", "");
+      safeSetVariable("desc", "");
     });
     splineApp.addEventListener("keyDown", (e) => {
       if (!splineApp) return;
       const skill = SKILLS[e.target.name as SkillNames];
       if (skill) setSelectedSkill(skill);
-      splineApp.setVariable("heading", skill.label);
-      splineApp.setVariable("desc", skill.shortDescription);
+      safeSetVariable("heading", skill?.label || "");
+      safeSetVariable("desc", skill?.shortDescription || "");
     });
     splineApp.addEventListener("mouseHover", handleMouseHover);
   };
@@ -568,7 +583,7 @@ const AnimatedBackground = () => {
             setSplineApp(app);
             bypassLoading();
           }}
-          scene="/assets/skills-keyboard.spline"
+          scene="/assets/skills_keyboard.spline"
         />
       </Suspense>
     </>

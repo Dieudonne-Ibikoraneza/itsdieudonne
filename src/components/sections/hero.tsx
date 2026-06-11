@@ -24,8 +24,8 @@ const HeroSection = () => {
           className={cn(
             "h-[calc(100dvh-3rem)] md:h-[calc(100dvh-4rem)] z-[2]",
             "col-span-1",
-            "flex flex-col justify-start md:justify-center items-center md:items-start",
-            "pt-28 sm:pt-0 sm:pb-32 md:p-24 lg:p-40 xl:p-48"
+            "flex flex-col justify-center md:justify-center items-center md:items-start",
+            "px-6 pt-20 pb-8 sm:px-10 sm:pt-0 sm:pb-32 md:p-24 lg:p-40 xl:p-48"
           )}
         >
           {!isLoading && (
@@ -34,7 +34,7 @@ const HeroSection = () => {
                 <BlurIn delay={0.7}>
                   <p
                     className={cn(
-                      "md:self-start mt-4 font-thin text-md text-slate-500 dark:text-zinc-400 ml-3",
+                      "self-start mt-4 font-thin text-md text-slate-500 dark:text-zinc-400 ml-1",
                       "cursor-default font-display sm:text-xl md:text-xl whitespace-nowrap bg-clip-text "
                     )}
                   >
@@ -47,8 +47,8 @@ const HeroSection = () => {
                     <TooltipTrigger asChild>
                       <h1
                         className={cn(
-                          "font-thin text-6xl text-transparent text-slate-800 ml-1 text-left",
-                          "cursor-default text-edge-outline font-display sm:text-2xl md:text-7xl "
+                          "font-thin text-5xl text-transparent text-slate-800 ml-1 text-center md:text-left",
+                          "cursor-default text-edge-outline font-display sm:text-6xl md:text-7xl "
                         )}
                       >
                         {config.author.split(" ")[0]}
@@ -72,7 +72,7 @@ const HeroSection = () => {
                 <BlurIn delay={1.2}>
                   <p
                     className={cn(
-                      "md:self-start md:mt-4 font-thin text-md text-slate-500 dark:text-zinc-400 ml-3",
+                      "self-start mt-2 md:mt-4 font-thin text-md text-slate-500 dark:text-zinc-400 ml-1",
                       "cursor-default font-display sm:text-xl md:text-xl whitespace-nowrap bg-clip-text "
                     )}
                   >
@@ -80,10 +80,10 @@ const HeroSection = () => {
                   </p>
                 </BlurIn>
               </div>
-              <div className="mt-8 md:ml-2 flex flex-col gap-3">
+              <div className="mt-8 w-full max-w-xs md:max-w-none md:ml-2 flex flex-col gap-3">
                 <Link
                   href={
-                    "https://drive.google.com/file/d/1-uQucFK7z3bbSYLS2XZ4MCLs4RJSfo6W/view"
+                    "https://drive.google.com/file/d/11H3MhShKyDFV1ecHDB7DEVeRWld2XJt6/view?usp=sharing"
                   }
                   target="_blank"
                   className="flex-1"
@@ -95,7 +95,7 @@ const HeroSection = () => {
                     </Button>
                   </BoxReveal>
                 </Link>
-                <div className="md:self-start flex gap-3">
+                <div className="self-start flex gap-3">
                   <Tooltip delayDuration={300}>
                     <TooltipTrigger asChild>
                       <Link href={"#contact"}>
