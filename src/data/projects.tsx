@@ -312,46 +312,79 @@ export type Project = {
 };
 const projects: Project[] = [
   {
-    id: "ibikoranezadieudonneblog",
-    category: "Blog & Newsletter",
-    title: "IBIKORANEZA Dieudonne's Blog",
-    src: "/assets/projects-screenshots/blog/2.png",
-    screenshots: ["1.png", "2.png", "3.png"],
-    live: "https://ibikoraneza-dieudonne-blog.vercel.app/",
-    github:
-      "https://github.com/Dieudonne-Ibikoraneza/ibikoraneza-dieudonne-blog",
+    id: "boraspace",
+    category: "Web & Mobile App",
+    title: "BoraSpace",
+    src: "/assets/projects-screenshots/boraspace/01.png",
+    screenshots: [
+      "01.png",
+      "02.png",
+      "03.png",
+      "04.png",
+    ],
+    live: "https://boraspace.com",
+    github: "https://github.com/Dieudonne-Ibikoraneza/boraspace-web-revamped",
     skills: {
       frontend: [
-        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.next,
+        PROJECT_SKILLS.ts,
         PROJECT_SKILLS.tailwind,
-        PROJECT_SKILLS.vite,
+        PROJECT_SKILLS.gsap,
+        PROJECT_SKILLS.framerMotion,
       ],
-      backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.express,
-        PROJECT_SKILLS.mongo,
-      ],
+      backend: [PROJECT_SKILLS.firebase, PROJECT_SKILLS.node],
     },
     get content() {
       return (
         <div>
-          <TypographyP className="font-mono ">
-            This is a personal blog website created to share insights,
-            tutorials, and experiences related to software development,
-            technology, and personal growth. Built with a clean, responsive
-            design, the blog features categorized posts, a searchable archive,
-            and a user-friendly interface. Whether you&apos;re a developer or a
-            tech enthusiast, you&apos;ll find valuable and engaging content
-            regularly updated by IBIKORANEZA Dieudonne.
+          <TypographyP className="font-mono text-lg font-bold mb-4">
+            BoraSpace - Your go-to platform for therapy in Rwanda and Africa
           </TypographyP>
+          <TypographyP className="font-mono mb-6">
+            Private, secure therapy sessions with verified professionals across Rwanda and East Africa, online whenever you need support. Book a licensed therapist in minutes.
+          </TypographyP>
+          
           <ProjectsLinks live={this.live} repo={this.github} />
+          
           <SlideShow
             images={[
-              `${BASE_PATH}/blog/1.png`,
-              `${BASE_PATH}/blog/2.png`,
-              `${BASE_PATH}/blog/3.png`,
+              `${BASE_PATH}/boraspace/01.png`,
+              `${BASE_PATH}/boraspace/04.png`,
             ]}
           />
+
+          <TypographyH3 className="my-4 mt-8">How The Process Works</TypographyH3>
+          <TypographyP className="font-mono mb-2">We designed the therapy journey to feel clear, supportive, and easy to begin from the first step.</TypographyP>
+          <ul className="list-disc pl-5 font-mono mb-6 flex flex-col gap-2">
+            <li><strong>Find Your Ideal Therapist:</strong> Tell us what support you need and we will guide you toward the right specialist.</li>
+            <li><strong>Easy Booking &amp; Scheduling:</strong> Browse therapist availability, pick a time that works for you, and confirm your session in seconds. Manage appointments and receive reminders right from your dashboard.</li>
+            <li><strong>Seamless &amp; Safe Payments:</strong> Pay securely through trusted, compliant third-party payment providers.</li>
+            <li><strong>Secure Call &amp; Chat Sessions:</strong> Attend therapy sessions directly inside the app using E2E encrypted calls and messaging. Your conversations remain private.</li>
+          </ul>
+
+          <SlideShow
+            images={[
+              `${BASE_PATH}/boraspace/02.png`,
+            ]}
+          />
+
+          <TypographyH3 className="my-4 mt-8">Therapy Services Offered</TypographyH3>
+          <ul className="list-disc pl-5 font-mono mb-6 flex flex-col gap-2">
+            <li><strong>Individual Therapy:</strong> Private sessions for anxiety, depression, self-esteem, grief, and healthier daily rhythms.</li>
+            <li><strong>Couples Counseling:</strong> Structured support for communication, conflict repair, intimacy, and trust rebuilding.</li>
+            <li><strong>Mindfulness Coaching:</strong> Practical techniques for nervous system regulation, better focus, and sustainable calm.</li>
+          </ul>
+
+          <SlideShow
+            images={[
+              `${BASE_PATH}/boraspace/03.png`,
+            ]}
+          />
+
+          <TypographyH3 className="my-4 mt-8">Take BoraSpace With You</TypographyH3>
+          <TypographyP className="font-mono mb-4">
+            Download the app for the full experience — secure sessions, encrypted messaging, and appointment management wherever you are. Join therapy calls from anywhere with a stable, secure connection. Available on the App Store and Google Play.
+          </TypographyP>
         </div>
       );
     },
@@ -395,6 +428,40 @@ const projects: Project[] = [
               `${BASE_PATH}/noteit/1.png`,
               `${BASE_PATH}/noteit/2.png`,
               `${BASE_PATH}/noteit/3.png`,
+            ]}
+          />
+        </div>
+      );
+    },
+  },
+  {
+    id: "parkingmanagementsystem",
+    category: "IoT",
+    title: "Automated Parking Management System",
+    src: "/assets/projects-screenshots/pms/01.jpeg",
+    screenshots: ["01.jpeg", "03.png"],
+    live: "https://github.com/Dieudonne-Ibikoraneza/parking-management-system",
+    github:
+      "https://github.com/Dieudonne-Ibikoraneza/parking-management-system",
+    skills: {
+      frontend: [PROJECT_SKILLS.html],
+      backend: [PROJECT_SKILLS.python, PROJECT_SKILLS.arduino],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono ">
+            A smart parking management system integrating license plate
+            recognition, RFID-based payment, and real-time dashboard monitoring.
+            Designed for automated vehicle entry/exit, payment processing, and
+            security alerts.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <SlideShow
+            images={[
+              `${BASE_PATH}/pms/01.jpeg`,
+              `${BASE_PATH}/pms/03.png`,
+              `${BASE_PATH}/pms/04.jpg`,
             ]}
           />
         </div>
@@ -468,80 +535,6 @@ const projects: Project[] = [
     },
   },
   {
-    id: "parkingmanagementsystem",
-    category: "IoT",
-    title: "Automated Parking Management System",
-    src: "/assets/projects-screenshots/pms/01.jpeg",
-    screenshots: ["01.jpeg", "03.png"],
-    live: "https://github.com/Dieudonne-Ibikoraneza/parking-management-system",
-    github:
-      "https://github.com/Dieudonne-Ibikoraneza/parking-management-system",
-    skills: {
-      frontend: [PROJECT_SKILLS.html],
-      backend: [PROJECT_SKILLS.python, PROJECT_SKILLS.arduino],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono ">
-            A smart parking management system integrating license plate
-            recognition, RFID-based payment, and real-time dashboard monitoring.
-            Designed for automated vehicle entry/exit, payment processing, and
-            security alerts.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow
-            images={[
-              `${BASE_PATH}/pms/01.jpeg`,
-              `${BASE_PATH}/pms/03.png`,
-              `${BASE_PATH}/pms/04.jpg`,
-            ]}
-          />
-        </div>
-      );
-    },
-  },
-  {
-    id: "hoobank",
-    category: "Web Development",
-    title: "HooBank - The next Generation Payment",
-    src: "/assets/projects-screenshots/hoobank/01.png",
-    screenshots: [
-      "01.png",
-      "02.png",
-      "03.png",
-    ],
-    live: "https://hoo-bank-vert.vercel.app",
-    github: "https://github.com/Dieudonne-Ibikoraneza/hoo-bank",
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.js,
-        PROJECT_SKILLS.react,
-        PROJECT_SKILLS.tailwind,
-        PROJECT_SKILLS.vite,
-      ],
-      backend: [],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono ">
-            Everything you need to accept card payments and grow your business
-            anywhere on the planet.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow
-            images={[
-              `${BASE_PATH}/hoobank/01.png`,
-              `${BASE_PATH}/hoobank/02.png`,
-              `${BASE_PATH}/hoobank/03.png`,
-            ]}
-          />
-        </div>
-      );
-    },
-  },
-  {
     id: "otherportfolio",
     category: "Portfolio",
     title: "Portfolio",
@@ -578,6 +571,51 @@ const projects: Project[] = [
               `${BASE_PATH}/otherportfolio/01.png`,
               `${BASE_PATH}/otherportfolio/02.png`,
               `${BASE_PATH}/otherportfolio/03.png`,
+            ]}
+          />
+        </div>
+      );
+    },
+  },
+  {
+    id: "ibikoranezadieudonneblog",
+    category: "Blog & Newsletter",
+    title: "IBIKORANEZA Dieudonne's Blog",
+    src: "/assets/projects-screenshots/blog/2.png",
+    screenshots: ["1.png", "2.png", "3.png"],
+    live: "https://ibikoraneza-dieudonne-blog.vercel.app/",
+    github:
+      "https://github.com/Dieudonne-Ibikoraneza/ibikoraneza-dieudonne-blog",
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.tailwind,
+        PROJECT_SKILLS.vite,
+      ],
+      backend: [
+        PROJECT_SKILLS.node,
+        PROJECT_SKILLS.express,
+        PROJECT_SKILLS.mongo,
+      ],
+    },
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono ">
+            This is a personal blog website created to share insights,
+            tutorials, and experiences related to software development,
+            technology, and personal growth. Built with a clean, responsive
+            design, the blog features categorized posts, a searchable archive,
+            and a user-friendly interface. Whether you&apos;re a developer or a
+            tech enthusiast, you&apos;ll find valuable and engaging content
+            regularly updated by IBIKORANEZA Dieudonne.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <SlideShow
+            images={[
+              `${BASE_PATH}/blog/1.png`,
+              `${BASE_PATH}/blog/2.png`,
+              `${BASE_PATH}/blog/3.png`,
             ]}
           />
         </div>
