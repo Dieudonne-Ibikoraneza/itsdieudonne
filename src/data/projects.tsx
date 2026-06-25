@@ -323,7 +323,7 @@ const projects: Project[] = [
       "04.png",
     ],
     live: "https://boraspace.com",
-    github: "https://github.com/Dieudonne-Ibikoraneza/boraspace-web-revamped",
+    github: "#",
     skills: {
       frontend: [
         PROJECT_SKILLS.next,
